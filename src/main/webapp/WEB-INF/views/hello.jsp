@@ -4,7 +4,6 @@
     <title>Hello MVC</title>
 </head>
 <body>
-<h1>Hello, ${greeting.name}</h1>
-<div>Current date and time is: ${greeting.currentDateTime}</div>
+<h1>Hello, human</h1>
 </body>
 </html>

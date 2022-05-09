@@ -27,8 +27,10 @@ public class ProcessFormController {
     @POST
     public String processForm() {
         if(bindingResult.isFailed()) {
-            models.put( "errors", bindingResult.getAllMessages() );
-            return "form.jsp";
+            System.out.println("Form invalid");
+            models.put("errors", bindingResult.getAllMessages());
+        } else {
+            System.out.println("Form valid");
         }
 
         // process the form request
