@@ -1,11 +1,14 @@
 package it.mulders.mvc;
 
+import it.mulders.mvc.validation.Customer;
 import jakarta.inject.Inject;
 import jakarta.mvc.Controller;
 import jakarta.mvc.Models;
 import jakarta.mvc.binding.BindingResult;
 import jakarta.mvc.binding.MvcBinding;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
+import jakarta.ws.rs.BeanParam;
 import jakarta.ws.rs.FormParam;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -17,6 +20,11 @@ public class ProcessFormController {
     @FormParam("age")
     @Min(18)
     private int age;
+
+    @MvcBinding
+    @BeanParam
+    @Valid
+    private Customer customer;
 
     @Inject
     private BindingResult bindingResult;
